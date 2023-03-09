@@ -1,0 +1,54 @@
+
+
+
+<!-- it will not work if the website is http as it needs to be https -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Speech Recognition Example</title>
+  </head>
+  <body>
+    <div id="result"></div>
+    <script>
+      window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const recognition = new SpeechRecognition();
+
+      recognition.onstart = function() {
+        console.log('Voice recognition started. Speak into the microphone.');
+      }
+
+      recognition.onresult = function(event) {
+        const resultIndex = event.resultIndex;
+        const transcript = event.results[resultIndex][0].transcript;
+        document.getElementById('result').innerHTML = transcript;
+      }
+
+      recognition.onerror = function(event) {
+        console.log(`Error occurred in recognition: ${event.error}`);
+      }
+
+      recognition.onend = function() {
+        console.log('Voice recognition ended.');
+      }
+
+      function startRecognition() {
+        try {
+          recognition.start();
+          console.log('Recognition started');
+        } catch (error) {
+          console.log(`Error occurred in starting recognition: ${error}`);
+        }
+      }
+
+      if (window.SpeechRecognition) {
+        const button = document.createElement('button');
+        button.textContent = 'Start Recognition';
+        button.addEventListener('click', startRecognition);
+        document.body.appendChild(button);
+      } else {
+        console.log('Speech recognition not supported by this browser');
+      }
+    </script>
+  </body>
+</html>

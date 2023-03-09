@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>CANVAS</h1>
+
+    <div id="divvv"></div>
+
+    <!-- <div id="box">ooh</div> -->
+    <!-- <p id="screen"></p> -->
+    <!-- <p id="screen2"></p> -->
+    <!-- <button id="btn1">red</button>
+    <button id="btn2">green</button> -->
+
+</body>
+
+<script>
+    let a = 0
+    window.addEventListener('pointerdown', e => {
+        a = 1
+    })
+
+    window.addEventListener('pointerup', e => {
+        a = 0
+    })
+
+
+    // setInterval(() => {
+    // document.getElementById('screen2').innerText = a
+    window.addEventListener('mousemove', e => {
+        if (a === 1) {
+            pp = document.createElement('p')
+            // pp.id = `pp${e.screenX}${e.screenY}`
+            // pp.className = 'ppClass'
+            pp.style.width = '20px'
+            pp.style.height = '20px'
+            pp.style.borderRadius = '100px'
+            pp.style.position = 'absolute'
+            pp.style.backgroundColor = 'red'
+            pp.style.left=`${e.screenX - 15}px`
+            pp.style.top=`${e.screenY - 100}px`
+            document.getElementById('divvv').appendChild(pp)
+            // document.getElementById(`pp${e.screenX}${e.screenY}`).style.left = `${e.screenX - 15}px`
+            // document.getElementById(`pp${e.screenX}${e.screenY}`).style.top = `${e.screenY - 80}px`
+        }
+
+    })
+
+
+</script>
+
+</html>

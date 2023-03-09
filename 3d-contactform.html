@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        background: url(pexels-eberhard-grossgasteiger-640781.jpg) no-repeat center;
+        background-size: cover;
+    }
+
+    #cont {
+        /* border: 2px solid red; */
+        
+    }
+
+    #form {
+        width: 350px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgb(255, 255, 255);
+        transform-style: preserve-3d;
+        transition: all linear .1s;
+        transform: perspective(1200px);
+        
+    }
+    
+    h2{
+        transform-style: preserve-3d;
+        transition: all linear .1s;
+        transform: perspective(1200px);
+        padding: 10px;
+        font-family: 'Tilt Warp', cursive;
+        color: white;
+        font-size: 3rem;
+
+
+    }
+
+    #inpname{
+        width: 300px;
+        transform-style: preserve-3d;
+        transition: all linear .1s;
+        transform: perspective(1200px);
+        padding: 5px;
+        margin: 20px 0 20px 0;
+        font-size: 1.1rem;
+        border: 1px solid rgb(255, 255, 255);
+        background-color: transparent;
+
+
+    }
+    #inpemail{
+        width: 300px;
+        transform-style: preserve-3d;
+        transition: all linear .1s;
+        transform: perspective(1200px);
+        padding: 5px;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        border: 1px solid rgb(255, 255, 255);
+        background-color: transparent;
+
+
+    }
+    #text{
+        width: 300px;
+        transform-style: preserve-3d;
+        transition: all linear .1s;
+    margin-bottom: 10px;
+        transform: perspective(1200px);
+        padding: 5px;
+        /* margin: 20px 0 20px 0; */
+        font-size: 1.1rem;
+        border: 1px solid rgb(255, 255, 255);
+        background-color: transparent;
+
+
+    }
+
+    ::placeholder{
+        color: white;
+    }
+    
+    #btn{
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transition: all linear .1s;
+    margin-bottom: 10px;
+        transform: perspective(1200px);
+        font-family: 'Tilt Warp', cursive;
+background-color: white;
+padding: 5px;
+width: 300px;
+
+
+    }
+
+    
+
+
+</style>
+
+<body>
+
+    <div id="cont">
+
+        <div id="form">
+            <div class="blur"></div>
+            <h2 id="h2">Contact</h2>
+
+            <input type="text" id="inpname" placeholder="Name">
+            <br>
+            <input type="email" id="inpemail" placeholder="Email">
+            <br>
+            <textarea name="text" id="text" placeholder="Text" cols="30" rows="10"></textarea>
+            <br>
+            <input type="submit" id="btn">Submit</input>
+        </div>
+
+
+    </div>
+
+</body>
+
+<script>
+    var left = Math.abs(document.getElementById("cont").getBoundingClientRect().left);
+    var right = Math.abs(document.getElementById("cont").getBoundingClientRect().right);
+    var topp = Math.abs(document.getElementById("cont").getBoundingClientRect().top);
+    var bottom = Math.abs(document.getElementById("cont").getBoundingClientRect().bottom);
+    y_axis = (left + right) / 2
+    x_axis = (topp + bottom) / 2
+
+
+    // document.getElementById("cont").addEventListener("mousemove", function (event) {
+    //     var cursorX = event.clientX;
+    //     var cursorY = event.clientY;
+    //     y_val = Math.floor(-(cursorX - y_axis) / 8)
+    //     x_val = Math.floor((cursorY - x_axis) / 8)
+    //     document.getElementById("form").style.transform = `perspective(1200px) rotateX(${x_val}deg) rotateY(${y_val}deg)`
+    //     document.getElementById("h2").style.transform = `perspective(1200px)translateZ(60px)`
+    //     document.getElementById("inpname").style.transform = `perspective(1200px) translateZ(60px)`
+    //     document.getElementById("inpemail").style.transform = `perspective(1200px) translateZ(60px)`
+    //     document.getElementById("text").style.transform = `perspective(1200px)translateZ(60px)`
+    //     document.getElementById("btn").style.transform = `perspective(1200px)translateZ(60px)`
+    // })
+
+    document.getElementById("cont").addEventListener("mouseleave", function () {
+        document.getElementById("form").style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg)`
+        document.getElementById("h2").style.transform = `perspective(1200px)translateZ(0px)`
+        document.getElementById("inpname").style.transform = `perspective(1200px) translateZ(0px)`
+        document.getElementById("inpemail").style.transform = `perspective(1200px) translateZ(0px)`
+        document.getElementById("text").style.transform = `perspective(1200px)translateZ(0px)`
+        document.getElementById("btn").style.transform = `perspective(1200px)translateZ(0px)`
+
+
+
+
+    })
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: grid;
+        place-items: center;
+    }
+
+    #cont {
+        padding: 20px;
+        position: relative;
+        top: 5rem;
+        width: 20rem;
+        background-color: rgb(44, 37, 63);
+    }
+
+    #text {
+        width: 20rem;
+        height: 6vmin;
+        background-color: rgb(177, 194, 218);
+        margin: 5px 0px;
+        font-size: 30px;
+    }
+
+    #btns {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    }
+
+    .btn {
+        cursor: pointer;
+        margin: 2px;
+        padding: 10px;
+        font-size: 1rem;
+        background-color: rgb(146, 147, 156);
+    }
+
+    .btn:hover {
+        background-color: rgb(174, 197, 220);
+    }
+</style>
+
+<body>
+
+    <div id="cont">
+        <div id="textcont">
+            <p id="text"></p>
+        </div>
+
+
+        <div id="btns">
+            <button class="btn">9</button>
+            <button class="btn">8</button>
+            <button class="btn">7</button>
+            <button class="btn">+</button>
+            <button class="btn">6</button>
+            <button class="btn">5</button>
+            <button class="btn">4</button>
+            <button class="btn">-</button>
+            <button class="btn">3</button>
+            <button class="btn">2</button>
+            <button class="btn">1</button>
+            <button class="btn">*</button>
+            <button class="btn">0</button>
+            <button class="btn">.</button>
+            <button class="btn">=</button>
+            <button class="btn">/</button>
+            <button class="btn">Clear</button>
+            <button class="btn">Back</button>
+            <button class="btn">(</button>
+            <button class="btn">)</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    text = document.getElementById('text')
+
+    buttons = document.querySelectorAll('button')
+
+    buttons.forEach((item) => {
+
+        item.addEventListener('click', function (e) {
+            // btnText = e.target.innerText
+            btnText = item.innerText
+            if (btnText == "Clear") {
+                text.innerText = ''
+            }
+            else if (btnText == "Back") {
+                previousText = text.innerText
+                arr = Array.from(previousText)
+                arr.pop()
+                joined = arr.join('')
+                text.innerText = joined
+            }
+
+            else if (btnText == "=") {
+                previousText = text.innerText
+                a = eval(previousText)
+                text.innerText = a
+            }
+            else {
+                text.innerText += btnText
+            }
+
+
+        })
+    })
+
+</script>
+
+</html>

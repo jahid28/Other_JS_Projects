@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/37d6505749.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    #imgbigcont {
+        display: grid;
+        place-items: center;
+        width: 100vw;
+    }
+
+    #imgcont {
+        border: 10px solid rgb(42, 41, 41);
+        width: 700px;
+        display: flex;
+    }
+
+    #btns {
+        /* background-color: aqua; */
+        display: grid;
+        place-items: center;
+    }
+
+    .btn {
+        filter: invert();
+        transform: scale(4);
+        /* cursor: pointer; */
+    }
+
+    #prev {
+
+        cursor: pointer;
+        position: relative;
+        top: -260px;
+        z-index: 1111;
+        left: -300px;
+    }
+
+    #next {
+        cursor: pointer;
+        position: relative;
+        top: -260px;
+        z-index: 1111;
+        left: 300px;
+    }
+
+    img {
+        transition: all linear .3s;
+
+        width: 700px;
+    }
+
+    #img0 {
+        z-index: 103;
+    }
+
+    #img1 {
+        z-index: 102;
+        position: relative;
+        left: -700px;
+
+    }
+
+    #img2 {
+        z-index: 101;
+        position: relative;
+        left: -1400px;
+
+    }
+
+    #img3 {
+        z-index: 100;
+        position: relative;
+        left: -2100px;
+
+    }
+</style>
+
+<body>
+
+    <div id="imgbigcont">
+        <div id="imgcont">
+
+            <img id="img0" src="fantasy-2049567_1920.jpg" alt="">
+            <img id="img1" src="nature-3082832_1920.jpg" alt="">
+            <img id="img2" src="road-1072821_1920.jpg" alt="">
+            <img id="img3" src="sunset-1373171_1920.jpg" alt="">
+
+        </div>
+
+
+    </div>
+
+    <div id="btns">
+
+        <div>
+            <i id="prev" class="fa-solid fa-caret-left btn"></i>
+            <i id="next" class="fa-solid fa-caret-right btn"></i>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+
+    prev = document.getElementById('prev')
+    next = document.getElementById('next')
+
+    img0 = document.getElementById('img0')
+    img1 = document.getElementById('img1')
+    img2 = document.getElementById('img2')
+    img3 = document.getElementById('img3')
+
+    sum = 0
+
+    prev.addEventListener('click', function () {
+        sum = sum - 1
+        document.getElementById('imgcont').style.transition = 'all linear .3s'
+    })
+    next.addEventListener('click', function () {
+        sum = sum + 1
+        document.getElementById('imgcont').style.transition = 'all linear .3s'
+    })
+
+
+
+    setInterval(() => {
+        sum = sum + 1
+    }, 5000)
+
+
+
+    setInterval(() => {
+        if (sum == 0) {
+            img0.style.opacity = '1'
+            img1.style.opacity = '0'
+            img2.style.opacity = '0'
+            img3.style.opacity = '0'
+
+        }
+        if (sum == 1) {
+            img0.style.opacity = '0'
+            img1.style.opacity = '1'
+            img2.style.opacity = '0'
+            img3.style.opacity = '0'
+
+        }
+        if (sum == 2) {
+            img0.style.opacity = '0'
+            img1.style.opacity = '0'
+            img2.style.opacity = '1'
+            img3.style.opacity = '0'
+
+        }
+        if (sum == 3) {
+            img0.style.opacity = '0'
+            img1.style.opacity = '0'
+            img2.style.opacity = '0'
+            img3.style.opacity = '1'
+
+        }
+
+        if (sum == 4) {
+            sum = 0
+        }
+
+        if (sum == -1) {
+            sum = 3
+        }
+    })
+
+
+
+</script>
+
+</html>

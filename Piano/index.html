@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyElements</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="flame2rotate.png" type="image/x-icon">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: grid;
+        height: 100vh;
+        place-items: center;
+        /* background-color: rgb(52, 52, 53); */
+
+    }
+
+    .btn {
+        padding: 20px;
+        height: 350px;
+        margin: 0px .5px;
+        background-color: white;
+    }
+
+    #btn1::after{
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 150px;
+        border-radius: 5px;
+        top:197px;
+        left: 550px;
+        background: black;
+        /* z-index: 111; */
+
+    }
+    #btn3::after{
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 150px;
+        border-radius: 5px;
+        top:197px;
+        left: 667px;
+        background: black;
+        /* z-index: 111; */
+
+    }
+    #btn5::after{
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 150px;
+        border-radius: 5px;
+        top:197px;
+        left: 784px;
+        background: black;
+        /* z-index: 111; */
+
+    }
+    #btn7::after{
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 150px;
+        border-radius: 5px;
+        top:197px;
+        left: 899px;
+        background: black;
+        /* z-index: 111; */
+
+    }
+</style>
+
+<body>
+
+    <div id="bigcont">
+        <div id="cont">
+            <button class="btn" id="btn1">A</button>
+            <button class="btn" id="btn2">S</button>
+            <button class="btn" id="btn3">D</button>
+            <button class="btn" id="btn4">F</button>
+            <button class="btn" id="btn5">G</button>
+            <button class="btn" id="btn6">H</button>
+            <button class="btn" id="btn7">J</button>
+            <button class="btn" id="btn8">K</button>
+            <button class="btn" id="btn9">L</button>
+        </div>
+    </div>
+    <!-- <img src="2022-05-01 11-20-17 (audio-extractor (mp3cut.net) (4).mp3" alt=""> -->
+</body>
+
+<script>
+
+    // aud1=new Audio('').play()
+    
+    btn = document.getElementsByClassName('btn')
+    // a = document.getElementById('btn0')
+
+    a = 0
+    b = 0
+    c = 0
+    d = 0
+    e = 0
+    f = 0
+    g = 0
+    h = 0
+    i = 0
+
+
+    window.addEventListener('keydown', function (x) {
+        if (x.keyCode === 65) {
+            a=a+1
+            check()
+            btn[0].style.backgroundColor = 'grey'
+        }
+        if (x.keyCode === 83) {
+            b=b+1
+            check()
+            btn[1].style.backgroundColor = 'grey'
+        }
+        if (x.keyCode === 68) {
+            c=c+1
+            check()
+            btn[2].style.backgroundColor = 'grey'
+        }
+        if (x.keyCode === 70) {
+            d=d+1
+            check()
+            btn[3].style.backgroundColor = 'grey'
+        }
+        if (x.keyCode === 71) {
+            // new Audio('2022-05-01 11-20-17 (audio-extractor (mp3cut.net) (4).mp3').play()
+            e=e+1
+            check()
+            btn[4].style.backgroundColor = 'grey'
+        }
+        if (x.keyCode === 72) {
+            f=f+1
+            check()
+            btn[5].style.backgroundColor = 'grey'
+        }
+        if (x.keyCode === 74) {
+            g=g+1
+            check()
+            btn[6].style.backgroundColor = 'grey'
+        }
+        if (x.keyCode === 75) {
+            h=h+1
+            check()
+            btn[7].style.backgroundColor = 'grey'
+        }
+
+        if (x.keyCode === 76) {
+            i=i+1
+            check()
+            btn[8].style.backgroundColor = 'grey'
+        }
+    })
+
+
+
+    window.addEventListener('keyup', function (x) {
+        if (x.keyCode === 65) {
+            a=0
+            btn[0].style.backgroundColor = 'white'
+        }
+        if (x.keyCode === 83) {
+            b=0
+            btn[1].style.backgroundColor = 'white'
+        }
+        if (x.keyCode === 68) {
+            c=0
+            btn[2].style.backgroundColor = 'white'
+        }
+        if (x.keyCode === 70) {
+            d=0
+            btn[3].style.backgroundColor = 'white'
+        }
+        if (x.keyCode === 71) {
+            e=0
+            btn[4].style.backgroundColor = 'white'
+        }
+        if (x.keyCode === 72) {
+            f=0
+            btn[5].style.backgroundColor = 'white'
+        }
+        if (x.keyCode === 74) {
+            g=0
+            btn[6].style.backgroundColor = 'white'
+        }
+        if (x.keyCode === 75) {
+            h=0
+            btn[7].style.backgroundColor = 'white'
+        }
+        if (x.keyCode === 76) {
+            i=0
+            btn[8].style.backgroundColor = 'white'
+        }
+    })
+
+
+    check = function () {
+        if (a ==1) {
+            new Audio('2022-05-01 11-20-17 (audio-extractor (mp3cut.net).mp3').play()
+        }
+        if (b ==1) {
+            new Audio('2022-05-01 11-20-17 (audio-extractor (mp3cut.net) (1).mp3').play()
+
+        }
+
+        if (c ==1) {
+            new Audio('2022-05-01 11-20-17 (audio-extractor (mp3cut.net) (2).mp3').play()
+        }
+        if (d ==1) {
+
+            new Audio('2022-05-01 11-20-17 (audio-extractor (mp3cut.net) (3).mp3').play()
+           
+        }
+
+        if (e ==1) {
+            new Audio('2022-05-01 11-20-17 (audio-extractor (mp3cut.net) (4).mp3').play()
+        }
+
+        if (f==1) {
+
+            new Audio('2022-05-01 11-20-17 (audio-extractor (mp3cut.net) (5).mp3').play()
+           
+        }
+        if (g ==1) {
+
+            new Audio('2022-05-01 11-20-17 (audio-extractor (mp3cut.net) (6).mp3').play()
+           
+        }
+        if (h ==1) {
+            
+            new Audio('2022-05-01 11-20-17 (audio-extractor (mp3cut.net) (7).mp3').play()
+            
+        }
+        if (i ==1) {
+            new Audio('2022-05-01 11-20-17 (audio-extractor (mp3cut.net) (8).mp3').play()
+        }
+    
+       
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+
+    #cont {
+        width: 400px;
+        height: 400px;
+        border-radius: 10px;
+        transform-style: preserve-3d;
+        transition: all linear .3s;
+        background: url(pexels-albert-suryansyah-10155039.jpg) no-repeat center;
+        background-size: cover;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sq {
+        width: 130px;
+        height: 130px;
+        font-size: 0;
+        border: 2px solid red;
+    }
+
+
+  
+</style>
+
+
+<body>
+
+    <div id="cont" class="cont">
+        <div id="sq1" class="sq">+20-25</div>
+        <div id="sq2" class="sq">+20+00</div>
+        <div id="sq3" class="sq">+20+25</div>
+        <div id="sq4" class="sq">+00-25</div>
+
+        <div id="sq5" class="sq">+00+00</div>
+
+        <div id="sq6" class="sq">+00+25</div>
+        <div id="sq7" class="sq">-20-25</div>
+        <div id="sq8" class="sq">-20+00</div>
+        <div id="sq9" class="sq">-20+25</div>
+    </div>
+
+   
+
+
+
+</body>
+
+<script>
+
+
+    document.querySelectorAll('.sq').forEach((e) => {
+        e.addEventListener('mouseover', function (i) {
+            
+            val=e.innerText
+            console.log(val)
+            
+            arr = Array.from(val)
+            xx = eval((arr.splice(0, 3)).join(''))
+            yy = eval(arr.join(''))
+            console.log(xx,yy)
+                document.getElementById('cont').style.transform = `perspective(1200px) rotateX(${xx}deg) rotateY(${yy}deg)`
+            
+        })
+    })
+    
+    document.getElementById('cont').addEventListener('mouseleave', function () {
+        document.getElementById('cont').style.transform = 'none'
+    })
+
+
+</script>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+
+    /* #stop {
+        display: none;
+    } */
+
+    .alarm {
+        padding: 5px;
+        display: grid;
+        place-items: center;
+    }
+
+    #alarmscreen {
+        border-radius: 5px;
+        height: 5ch;
+        width: 20ch;
+        background-color: rgb(147, 203, 235);
+        margin: 20px 0px;
+        padding: 10px;
+        display: grid;
+        place-items: center;
+    }
+</style>
+
+<body>
+
+    <button id="stop">
+        Stop
+    </button>
+
+    <div class="alarm">
+        <p id="alarmscreen">Set Alarm</p>
+        <input type="datetime-local" id="setalarm">
+        <button id="btn">Set Alarm</button>
+
+    </div>
+
+    <!-- <img src="alarm-clock-short-6402.mp3" alt=""> -->
+
+</body>
+
+<script>
+
+    document.getElementById('stop').style.display = 'none'
+
+
+    document.getElementById('btn').addEventListener('click', function () {
+        document.getElementById('btn').style.display = 'none'
+
+        alarmValue = document.getElementById('setalarm').value
+        alarmTime=new Date(alarmValue)
+        currentTime = new Date()
+
+        if ((alarmTime - currentTime) < 0) {
+            alert('Please Enter Valid Time')
+            location.reload()
+        }
+
+        else if ((alarmTime - currentTime) > 0) {
+            setInterval(() => {
+                currentTime = new Date()
+
+                document.getElementById('alarmscreen').innerText = `Ringing alarm in ${alarmTime - currentTime} millisecons`
+
+                {
+                    if ((alarmTime - currentTime) < 0) {
+                        document.getElementById('alarmscreen').innerText = ''
+                        new Audio('alarm-clock-short-6402.mp3').play()
+                        document.getElementById('stop').style.display = 'block'
+                        document.getElementById('stop').addEventListener('click', function () {
+                            location.reload()
+                        })
+
+
+                    }
+                }
+
+
+            }, 1000)
+        }
+
+
+
+    })
+
+</script>
+
+</html>

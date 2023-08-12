@@ -521,7 +521,7 @@
         </path>
         <path class="allPaths"
             d="M1652.9 259.5l0-0.6 2.5 0.2 0.6-2.8 3.6-0.4 2-0.4 0-1.5 8.3 7.5 3.3 4.2 3.4 7.4-0.5 3.5-4.3 1.2-3.1 2.7-4.6 0.5-2.1-3.5-1.1-4.8-5.3-6.6 3.4-1.1-6.1-5.5z" "KR"
-            id="South Korea ">
+            id="South Korea">
         </path>
         <path class="allPaths" d="M1247.5 309.4l1.5 2.8-0.3 1.5 2.4 4.8-3.9 0.2-1.7-3.1-5-0.6 3.3-6.2 3.7 0.6z" "KW"
             id="Kuwait">
@@ -1614,9 +1614,8 @@
 
     }
 
-
-
     document.querySelectorAll(".allPaths").forEach(e => {
+        e.setAttribute('class', `allPaths ${e.id}`);
         e.addEventListener("mouseover", function () {
             window.onmousemove=function (j) {
                 x = j.clientX
@@ -1624,16 +1623,19 @@
                 document.getElementById('name').style.top = y-60  + 'px'
                 document.getElementById('name').style.left = x +10 + 'px'
             }
-            // document.querySelectorAll(".allPaths").forEach(i => {
-            //     i.style.fill = "#ececec"
-            // })
-            e.style.fill = "pink"
+            const classes=e.className.baseVal.replace(/ /g, '.')         
+            document.querySelectorAll(`.${classes}`).forEach(country =>{
+                country.style.fill = "pink"
+            })
             document.getElementById("name").style.opacity = 1
             
             document.getElementById("namep").innerText = e.id
         })
         e.addEventListener("mouseleave", function () {
-            e.style.fill = "#ececec"
+            const classes=e.className.baseVal.replace(/ /g, '.')
+            document.querySelectorAll(`.${classes}`).forEach(country =>{
+                country.style.fill = "#ececec"
+            })
             document.getElementById("name").style.opacity = 0
         })
 

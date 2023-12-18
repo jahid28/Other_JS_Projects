@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        /* overflow-x: hidden; */
+    }
+    .cont{
+        display: flex;
+        border: 2px solid rgb(255, 0, 0);
+        position: relative;
+        /* left: 330vw; */
+        width: 220rem;
+    }
+    .cont2{
+        display: flex;
+        border: 2px solid rgb(255, 0, 0);
+        position: relative;
+        /* left: 330vw; */
+        width: 220rem;
+    }
+    .p1,.p2,.p3,.p4{
+        border: 2px solid rgb(0, 255, 72);
+        position: relative;
+        font-size: 4rem;
+        font-family: "Gasoek One", sans-serif;
+        
+    }
+    .p1{
+        left: 110rem;
+        animation: anime1 infinite linear 10s;
+    }
+    .p2{
+        
+        animation: anime2 infinite linear 10s;
+        animation-delay: 5s;
+    }
+    .p3{
+        left: -110rem;
+        animation: anime3 infinite linear 10s;
+    }
+    .p4{
+        left: -220rem;
+        animation: anime4 infinite linear 10s;
+        animation-delay: 5s;
+    }
+    @keyframes anime1 {
+        0%{
+            left: 110rem;
+        }
+        100%{
+            left: -110rem;
+        }
+        
+    }
+    @keyframes anime2 {
+        0%{
+            left: 0;
+        }
+        100%{
+            left: -220rem;
+        }
+        
+    }
+    @keyframes anime3 {
+        0%{
+            left: -110rem;
+        }
+        100%{
+            left: 110rem;
+        }
+        
+    }
+    @keyframes anime4 {
+        0%{
+            left: -220rem;
+        }
+        100%{
+            left: 0;
+        }
+        
+    }
+</style>
+<body>
+
+    <div class="cont">
+        <p class="p1">
+            Hi My name is Jahid Khan and I am pursuing Btech.
+        </p>
+        <p class="p2">
+            Hi My name is Jahid Khan and I am pursuing Btech.
+        </p>
+    </div>
+
+    <div class="cont2">
+        <p class="p3">
+            Hi My name is Jahid Khan and I am pursuing Btech.
+        </p>
+        <p class="p4">
+            Hi My name is Jahid Khan and I am pursuing Btech.
+        </p>
+    </div>
+    
+</body>
+<script>
+    // setInterval(()=>{
+
+    //     document.getElementById("p").style.animation="anime infinite linear 5s"
+
+    // },10000)
+</script>
+</html>

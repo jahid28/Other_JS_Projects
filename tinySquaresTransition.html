@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+    }
+    button {
+      border: none;
+      padding: 10px 40px 10px 40px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1.6rem;
+      background-color: rgb(187, 210, 236);
+    }
+    .cont {
+      position: absolute;
+      z-index: -100;
+      transform-style: preserve-3d;
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    .child {
+      background-color: rgb(56, 85, 61);
+      border: 1px solid black;
+      width: 10vw;
+      /* width: 5vw; */
+      height: 20vh;
+      /* animation: anime linear infinite 2s; */
+    }
+    .y{
+        transform: rotateY(90deg);
+    }
+    .x{
+        transform: rotateX(90deg);
+    }
+    @keyframes anime {
+      0% {
+        transform: rotateY(0deg);
+      }
+      100% {
+        transform: rotateY(180deg);
+      }
+    }
+  </style>
+  <body>
+    <button id="btn">Click</button>
+
+    <div class="cont">
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+
+      
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+      <div class="child y"></div>
+      <div class="child x"></div>
+
+
+
+
+
+     
+  </body>
+
+  <script>
+    var y = document.getElementsByClassName("y");
+    var x = document.getElementsByClassName("x");
+    document.querySelector(".cont").style.opacity = "0";
+    document.getElementById("btn").style.display = "block";
+    
+    document.getElementById("btn").addEventListener("click", function () {
+      document.querySelector(".cont").style.opacity = "1";
+      document.getElementById("btn").style.display = "none";
+      
+      for (var i = 0; i < y.length; i++) {
+          y[i].style.transform = "rotateY(270deg)";
+          y[i].style.transition= "all linear 2s";
+          
+        }
+      for (var i = 0; i < x.length; i++) {
+          x[i].style.transform = "rotateX(270deg)";
+          x[i].style.transition= "all linear 2s";
+          
+        }
+        
+        setTimeout(() => {
+            document.getElementById("btn").style.display = "block";
+            document.querySelector(".cont").style.opacity = "0";
+            for (var i = 0; i < y.length; i++) {
+                y[i].style.transition= "none";
+                y[i].style.transform = "rotateY(90deg)";
+        }
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.transition= "none";
+                x[i].style.transform = "rotateX(90deg)";
+        }
+      }, 2000);
+    });
+  </script>
+</html>

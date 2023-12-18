@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+
+    }
+    body{
+        overflow-x: hidden;
+    }
+    h1{
+        font-size: 8rem;
+    }
+    .imgCont{
+        position: relative;
+        /* border: 2px solid red; */
+        width: 100%;
+        height: 30rem;
+        display: grid;
+        place-items: center;
+
+    }
+    img{
+        height: 30rem;
+        position: absolute;
+        /* border: 2px solid green; */
+        /* position: absolute; */
+        top: 0;
+    }
+    #img1{
+        left: -50vw;
+    }
+    #img2{
+        left: 100vw;
+    }
+</style>
+<body>
+    
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    
+    <!-- <img src="dog-8439530_1280.jpg" alt=""> -->
+    <div class="imgCont">
+
+        <img id="img1" src="dog-bg.png" alt="">
+        <img id="img2" src="dog-cutout.png" alt="">
+    </div>
+        
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    let tl = gsap.timeline();
+    let tl2 = gsap.timeline();
+
+    tl.to("#img1", {
+      scrollTrigger: {
+        trigger: "#img1",
+        start: "-110% 0%",
+        end: "0% 0%",
+        scrub: true,
+        // markers: true,
+      },
+      x: "+=75vw",
+    });
+
+    tl2.to("#img2", {
+      scrollTrigger: {
+        trigger: "#img2",
+        start: "-110% 0%",
+        end: "0% 0%",
+        scrub: true,
+        // markers: true,
+      },
+      x: "-=75vw",
+    });
+  </script>
+</html>

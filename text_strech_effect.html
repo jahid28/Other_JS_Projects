@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet"></head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    #cont{
+        border: 2px solid red;
+    }
+    h2{
+        display: flex;
+        border: 2px solid green;
+        -webkit-text-stroke: 9px black;
+        /* font-size: 10rem; */
+        font-family: 'Archivo Black', sans-serif;
+    }
+    #h2_1{
+        
+        /* transform: scaleY(1); */
+        font-size: 15rem;
+    }
+    #h2_2{
+        /* transform: scaleY(1) scaleX(1); */
+        font-size: 16.5rem;
+    }
+   
+</style>
+<body>
+
+    <div id="cont">
+
+        <h2 id="h2_1">
+            <span class="S_1">S</span> 
+            <span class="C_1">C</span> 
+            <span class="U_1">U</span> 
+            <span class="L_1">L</span> 
+            <span class="P_1">P</span> 
+            <span class="T_1">T</span> 
+            <span class="I_1">I</span> 
+            <span class="N_1">N</span> 
+            <span class="G_1">G</span> 
+        </h2>
+        <h2 id="h2_2">
+            <span class="H_2">H</span> 
+            <span class="A_2">A</span> 
+            <span class="R_2">R</span> 
+            <span class="M_2">M</span> 
+            <span class="O_2">O</span> 
+            <span class="N_2">N</span> 
+            <span class="Y_2">Y</span> 
+        </h2>
+    </div>
+    
+</body>
+<script>
+    const screenWidth = window.screen.width;
+// const screenHeight = window.screen.height;
+document.getElementById("cont").addEventListener("mousemove",function(e){
+    // document.getElementById("cont").addEventListener("mouseover",function(){
+        let x=e.screenX
+        // let y=e.screenY
+        let h2_1=(x/screenWidth)*100
+        let h2_2=100-h2_1
+        // let yperc=(y/screenHeight)*100
+        if(h2_1>=5 && h2_2>=5){
+            document.querySelector(".S_1").style.transform=`scaleY(${h2_1*0.02})`
+            document.querySelector(".C_1").style.transform=`scaleY(${h2_1*0.03})`
+            document.querySelector(".U_1").style.transform=`scaleY(${h2_1*0.015})`
+            document.querySelector(".L_1").style.transform=`scaleY(${h2_1*0.02})`
+            document.querySelector(".P_1").style.transform=`scaleY(${h2_1*0.03})`
+            document.querySelector(".T_1").style.transform=`scaleY(${h2_1*0.02})`
+            document.querySelector(".I_1").style.transform=`scaleY(${h2_1*0.015})`
+            document.querySelector(".N_1").style.transform=`scaleY(${h2_1*0.025})`
+            document.querySelector(".G_1").style.transform=`scaleY(${h2_1*0.02})`
+            document.querySelector(".H_2").style.transform=`scaleY(${h2_2*0.03})`
+            document.querySelector(".A_2").style.transform=`scaleY(${h2_2*0.02})`
+            document.querySelector(".R_2").style.transform=`scaleY(${h2_2*0.025})`
+            document.querySelector(".M_2").style.transform=`scaleY(${h2_2*0.015})`
+            document.querySelector(".O_2").style.transform=`scaleY(${h2_2*0.02})`
+            document.querySelector(".N_2").style.transform=`scaleY(${h2_2*0.015})`
+            document.querySelector(".Y_2").style.transform=`scaleY(${h2_2*0.03})`
+        }
+
+    // })
+// console.log(e.screenX)
+})
+</script>
+</html>

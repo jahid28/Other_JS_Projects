@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .cont {
+      transform-style: preserve-3d;
+      transform: perspective(1200px);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      place-items: center;
+      grid-gap: 20px;
+    }
+
+    .side {
+      width: 300px;
+      height: 300px;
+      cursor: pointer;
+    }
+    .img1{
+      transform: translateZ(-2000px);
+    }
+    .img2{
+      transform: translateZ(-1500px);
+    }
+    .img3{
+      transform: translateZ(-800px);
+    }
+    .img4{
+      transform: translateZ(-2500px);
+    }
+    .img5{
+      transform: translateZ(-1600px);
+    }
+    .img6{
+      transform: translateZ(-2500px);
+    }
+    .img7{
+      transform: translateZ(-3500px);
+    }
+    .img8{
+      transform: translateZ(-3000px);
+    }
+   
+   
+  
+    h1 {
+      font-size: 9rem;
+    }
+  </style>
+  <body id="body">
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+
+    <div id="cont" class="cont">
+      <img class="side img1 fast" src="pexels-krivec-ales-547114.jpg" alt="" />
+      <img class="side img2 slow" src="pexels-tyler-lastovich-937782.jpg" alt="" />
+      <img class="side img3 fast" src="pexels-simon-berger-1323550.jpg" alt="" />
+      <img class="side img4 slow" src="starry-sky-g9b261c1c1_1920.jpg" alt="" />
+      <img class="side img5 fast" src="pexels-krivec-ales-547114.jpg" alt="" />
+      <img class="side img6 slow" src="pexels-tyler-lastovich-937782.jpg" alt="" />
+      <img class="side img7 fast" src="pexels-simon-berger-1323550.jpg" alt="" />
+      <img class="side img8 slow" src="starry-sky-g9b261c1c1_1920.jpg" alt="" />
+    </div>
+
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+    <h1>heading</h1>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    let tl = gsap.timeline();
+    let tl2 = gsap.timeline();
+
+    tl.to(".fast", {
+      scrollTrigger: {
+        trigger: "#cont",
+        start: "-60% 0%",
+        end: "80% 0%",
+        scrub: true,
+        markers: true,
+      },
+      translateZ:"+=1600px"
+    });
+    tl2.to(".slow", {
+      scrollTrigger: {
+        trigger: "#cont",
+        start: "-60% 0%",
+        end: "80% 0%",
+        scrub: true,
+        markers: true,
+      },
+      translateZ:"+=2800px"
+    });
+  </script>
+</html>

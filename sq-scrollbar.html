@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin: 0 50px 0 50px;
+  }
+
+  #bart {
+    width: 100vw;
+    height: 10px;
+    transition: all linear 0.1s;
+    background-color: rgb(227, 58, 131);
+    box-shadow: 0 0 10px 5px rgb(255, 0, 200);
+    position: fixed;
+    top: 0;
+    left: -100vw;
+  }
+
+  #barr {
+    height: 100vh;
+    width: 10px;
+    transition: all linear 0.1s;
+    background-color: rgb(111, 183, 63);
+    box-shadow: 0 0 10px 5px rgb(129, 241, 85);
+    position: fixed;
+    top: -100vh;
+    left: 99.5vw;
+  }
+
+  #barb {
+    width: 100vw;
+    height: 10px;
+    transition: all linear 0.1s;
+    background-color: rgb(227, 58, 131);
+    box-shadow: 0 0 10px 5px rgb(255, 0, 200);
+    position: fixed;
+    top: 98.5vh;
+    left: 100vw;
+  }
+
+  #barl {
+    height: 100vh;
+    width: 10px;
+    transition: all linear 0.1s;
+    background-color: rgb(227, 58, 131);
+    box-shadow: 0 0 10px 5px rgb(255, 0, 200);
+    position: fixed;
+    top: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  #cont {
+    position: absolute;
+  }
+</style>
+
+<body id="body">
+  <div id="cont">
+    <div id="bart"></div>
+    <div id="barr"></div>
+    <div id="barl"></div>
+    <div id="barb"></div>
+  </div>
+  <h1 id="val">Heading</h1>
+
+
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus iusto
+    sapiente libero mollitia ipsa quibusdam quas reiciendis voluptate
+    recusandae. Eum necessitatibus nisi doloribus accusantium ipsum omnis,
+    enim earum molestias cumque eius eveniet debitis, vitae quae incidunt?
+    Dicta iusto officiis ipsum dignissimos expedita possimus perferendis
+    officia temporibus odio alias aliquid facere ipsam molestiae fuga,
+    accusamus eius omnis voluptatem. Doloribus repellendus eligendi quo itaque
+    minima magnam natus dicta sint corrupti quidem ex ratione, id sunt! Minima
+    repellendus molestiae facere repudiandae dolorem dignissimos sit quae a
+    reiciendis praesentium, officia magnam fugit molestias, eos iusto dolores
+    laudantium impedit? Aliquid culpa, magni neque nulla nobis libero
+    exercitationem. Molestias dicta veniam dolore neque laboriosam quos
+    possimus, sunt odio impedit, facere vel minima vero ex eum explicabo
+    expedita? Molestiae adipisci similique consequatur quis quae illo,
+    laudantium, voluptatum quam fuga quibusdam itaque ducimus eligendi quas.
+    Expedita, architecto? Mollitia eveniet reiciendis dicta? Repudiandae,
+    dolorem assumenda ipsum exercitationem doloremque eius corrupti? Natus,
+    aspernatur numquam rem quibusdam vitae sunt reprehenderit distinctio saepe
+    velit vero molestiae earum perferendis veritatis dolorum eos pariatur in
+    temporibus commodi placeat ullam. Consequuntur inventore, laborum, natus
+    ipsa delectus architecto ipsum porro adipisci corporis repudiandae
+    voluptate excepturi dolor rerum harum deserunt ut odio. Impedit placeat
+    veniam voluptates soluta.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus iusto
+    sapiente libero mollitia ipsa quibusdam quas reiciendis voluptate
+    recusandae. Eum necessitatibus nisi doloribus accusantium ipsum omnis,
+    enim earum molestias cumque eius eveniet debitis, vitae quae incidunt?
+    Dicta iusto officiis ipsum dignissimos expedita possimus perferendis
+    officia temporibus odio alias aliquid facere ipsam molestiae fuga,
+    accusamus eius omnis voluptatem. Doloribus repellendus eligendi quo itaque
+    minima magnam natus dicta sint corrupti quidem ex ratione, id sunt! Minima
+    repellendus molestiae facere repudiandae dolorem dignissimos sit quae a
+    reiciendis praesentium, officia magnam fugit molestias, eos iusto dolores
+    laudantium impedit? Aliquid culpa, magni neque nulla nobis libero
+    exercitationem. Molestias dicta veniam dolore neque laboriosam quos
+    possimus, sunt odio impedit, facere vel minima vero ex eum explicabo
+    expedita? Molestiae adipisci similique consequatur quis quae illo,
+    laudantium, voluptatum quam fuga quibusdam itaque ducimus eligendi quas.
+    Expedita, architecto? Mollitia eveniet reiciendis dicta? Repudiandae,
+    dolorem assumenda ipsum exercitationem doloremque eius corrupti? Natus,
+    aspernatur numquam rem quibusdam vitae sunt reprehenderit distinctio saepe
+    velit vero molestiae earum perferendis veritatis dolorum eos pariatur in
+    temporibus commodi placeat ullam. Consequuntur inventore, laborum, natus
+    ipsa delectus architecto ipsum porro adipisci corporis repudiandae
+    voluptate excepturi dolor rerum harum deserunt ut odio. Impedit placeat
+    veniam voluptates soluta.
+  </p>
+
+  <h1 style="text-align: center;">Heading</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus iusto
+    sapiente libero mollitia ipsa quibusdam quas reiciendis voluptate
+    recusandae. Eum necessitatibus nisi doloribus accusantium ipsum omnis,
+    enim earum molestias cumque eius eveniet debitis, vitae quae incidunt?
+    Dicta iusto officiis ipsum dignissimos expedita possimus perferendis
+    officia temporibus odio alias aliquid facere ipsam molestiae fuga,
+    accusamus eius omnis voluptatem. Doloribus repellendus eligendi quo itaque
+    minima magnam natus dicta sint corrupti quidem ex ratione, id sunt! Minima
+    repellendus molestiae facere repudiandae dolorem dignissimos sit quae a
+    reiciendis praesentium, officia magnam fugit molestias, eos iusto dolores
+    laudantium impedit? Aliquid culpa, magni neque nulla nobis libero
+    exercitationem. Molestias dicta veniam dolore neque laboriosam quos
+    possimus, sunt odio impedit, facere vel minima vero ex eum explicabo
+    expedita? Molestiae adipisci similique consequatur quis quae illo,
+    laudantium, voluptatum quam fuga quibusdam itaque ducimus eligendi quas.
+    Expedita, architecto? Mollitia eveniet reiciendis dicta? Repudiandae,
+    dolorem assumenda ipsum exercitationem doloremque eius corrupti? Natus,
+    aspernatur numquam rem quibusdam vitae sunt reprehenderit distinctio saepe
+    velit vero molestiae earum perferendis veritatis dolorum eos pariatur in
+    temporibus commodi placeat ullam. Consequuntur inventore, laborum, natus
+    ipsa delectus architecto ipsum porro adipisci corporis repudiandae
+    voluptate excepturi dolor rerum harum deserunt ut odio. Impedit placeat
+    veniam voluptates soluta. xxxxxxxxx
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus iusto
+    sapiente libero mollitia ipsa quibusdam quas reiciendis voluptate
+    recusandae. Eum necessitatibus nisi doloribus accusantium ipsum omnis,
+    enim earum molestias cumque eius eveniet debitis, vitae quae incidunt?
+    Dicta iusto officiis ipsum dignissimos expedita possimus perferendis
+    officia temporibus odio alias aliquid facere ipsam molestiae fuga,
+    accusamus eius omnis voluptatem. Doloribus repellendus eligendi quo itaque
+    minima magnam natus dicta sint corrupti quidem ex ratione, id sunt! Minima
+    repellendus molestiae facere repudiandae dolorem dignissimos sit quae a
+    reiciendis praesentium, officia magnam fugit molestias, eos iusto dolores
+    laudantium impedit? Aliquid culpa, magni neque nulla nobis libero
+    exercitationem. Molestias dicta veniam dolore neque laboriosam quos
+    possimus, sunt odio impedit, facere vel minima vero ex eum explicabo
+    expedita? Molestiae adipisci similique consequatur quis quae illo,
+    laudantium, voluptatum quam fuga quibusdam itaque ducimus eligendi quas.
+    Expedita, architecto? Mollitia eveniet reiciendis dicta? Repudiandae,
+    dolorem assumenda ipsum exercitationem doloremque eius corrupti? Natus,
+    aspernatur numquam rem quibusdam vitae sunt reprehenderit distinctio saepe
+    velit vero molestiae earum perferendis veritatis dolorum eos pariatur in
+    temporibus commodi placeat ullam. Consequuntur inventore, laborum, natus
+    ipsa delectus architecto ipsum porro adipisci corporis repudiandae
+    voluptate excepturi dolor rerum harum deserunt ut odio. Impedit placeat
+    veniam voluptates soluta. xxxxxxxxx
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus iusto
+    sapiente libero mollitia ipsa quibusdam quas reiciendis voluptate
+    recusandae. Eum necessitatibus nisi doloribus accusantium ipsum omnis,
+    enim earum molestias cumque eius eveniet debitis, vitae quae incidunt?
+    Dicta iusto officiis ipsum dignissimos expedita possimus perferendis
+    officia temporibus odio alias aliquid facere ipsam molestiae fuga,
+    accusamus eius omnis voluptatem. Doloribus repellendus eligendi quo itaque
+    minima magnam natus dicta sint corrupti quidem ex ratione, id sunt! Minima
+    repellendus molestiae facere repudiandae dolorem dignissimos sit quae a
+    reiciendis praesentium, officia magnam fugit molestias, eos iusto dolores
+    laudantium impedit? Aliquid culpa, magni neque nulla nobis libero
+    exercitationem. Molestias dicta veniam dolore neque laboriosam quos
+    possimus, sunt odio impedit, facere vel minima vero ex eum explicabo
+    expedita? Molestiae adipisci similique consequatur quis quae illo,
+    laudantium, voluptatum quam fuga quibusdam itaque ducimus eligendi quas.
+    Expedita, architecto? Mollitia eveniet reiciendis dicta? Repudiandae,
+    dolorem assumenda ipsum exercitationem doloremque eius corrupti? Natus,
+    aspernatur numquam rem quibusdam vitae sunt reprehenderit distinctio saepe
+    velit vero molestiae earum perferendis veritatis dolorum eos pariatur in
+    temporibus commodi placeat ullam. Consequuntur inventore, laborum, natus
+    ipsa delectus architecto ipsum porro adipisci corporis repudiandae
+    voluptate excepturi dolor rerum harum deserunt ut odio. Impedit placeat
+    veniam voluptates soluta. xxxxxxxxx
+  </p>
+
+</body>
+<script>
+  var body = document.body;
+  console.log(body.scrollHeight)
+
+  window.addEventListener("scroll", function () {
+    scr = pageYOffset;
+    console.log(scr, 'and ',window.innerHeight )
+    progress = Math.floor((scr / (body.scrollHeight - window.innerHeight)) * 100);
+
+    if (progress <= 25) {
+      document.getElementById("bart").style.left = `${progress * 4 - 100}vw`;
+    }
+
+    if (25 < progress && progress <= 50) {
+      document.getElementById("barr").style.top = `${(progress - 26) * 4 - 100}vh`;
+    }
+    if (50 < progress && progress <= 75) {
+      document.getElementById("barb").style.left = `${100 - (progress - 51) * 4}vw`;
+    }
+    if (75 < progress && progress <= 100) {
+      document.getElementById("barl").style.top = `${100 - (progress - 75) * 4}vh`;
+    }
+
+    if (progress > 25) {
+      document.getElementById("bart").style.left = `0vw`;
+    }
+    if (progress > 50) {
+      document.getElementById("barr").style.top = `0vh`;
+    }
+    if (progress > 75) {
+      document.getElementById("barb").style.left = `0vw`;
+    }
+
+    if (progress < 25) {
+      document.getElementById("barr").style.top = `-100vh`;
+    }
+    if (progress < 50) {
+      document.getElementById("barb").style.left = `100vw`;
+    }
+    if (progress < 75) {
+      document.getElementById("barl").style.top = `100vh`;
+    }
+  });
+</script>
+
+</html>

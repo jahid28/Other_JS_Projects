@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        /* overflow-x: hidden; */
+    }
+    .cont{
+        display: flex;
+        border: 2px solid rgb(255, 0, 0);
+        position: relative;
+        left: -10rem;
+        top: -15rem;
+        width: 290rem;
+        transform: rotate(-20deg);
+        margin-bottom: 40rem;
+
+    }
+   
+    .p1,.p2{
+        border: 2px solid rgb(0, 255, 72);
+        position: relative;
+        font-size: 4rem;
+        /* left: -10rem; */
+        font-family: "Gasoek One", sans-serif;
+        
+    }
+    .p1{
+        left: 145rem;
+        animation: anime1 infinite linear 10s;
+    }
+    .p2{
+        
+        animation: anime2 infinite linear 10s;
+        animation-delay: 5s;
+    }
+   
+    @keyframes anime1 {
+        0%{
+            left: 145rem;
+        }
+        100%{
+            left: -145rem;
+        }
+        
+    }
+    @keyframes anime2 {
+        0%{
+            left: 0;
+        }
+        100%{
+            left: -290rem;
+        }
+        
+    }
+    h1{
+        font-size: 8rem;
+    }
+    
+</style>
+<body>
+
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    
+    <div class="cont">
+        <p class="p1 ptag">
+         I am Jahid Khan. I am Jahid Khan. I am Jahid Khan. I am Jahid Khan.
+        </p>
+        <p class="p2 ptag">
+         I am Jahid Khan. I am Jahid Khan. I am Jahid Khan. I am Jahid Khan.
+        </p>
+    </div>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+
+   
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+<script>
+    let tl = gsap.timeline();
+
+    tl.to(".ptag", {
+      scrollTrigger: {
+        trigger: ".cont",
+        start: "25% 0%",
+        end: "100% 0%",
+        scrub: true,
+        markers: true,
+      },
+      x:"-=2000px"
+    });
+</script>
+</html>

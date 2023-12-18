@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+        text-align: center;
+        margin-top: 20px;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 3rem;
+    }
+    #choose{
+        text-align: center;
+        font-size: 2rem;
+        font-family: 'Bebas Neue', cursive;
+        margin: 10px 0 20px 0;
+
+    }
+
+    #cont{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center;
+    }
+
+    #cont div{
+        cursor: pointer;
+        width: 300px;
+        height: 450px;
+        border: 3px solid black;
+        border-radius: 20px;
+        font-size: 14rem;
+        display: grid;
+        place-items: center;
+        transition: all linear .2s
+    }
+
+    #cont div:hover{
+        transform: scale(1.1);
+        transition: all linear .2s;
+    }
+
+    #result{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+    }
+    .rcard{
+        font-family: 'Bebas Neue', cursive;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .rcard div{
+        cursor: pointer;
+        width: 300px;
+        height: 450px;
+        border: 3px solid black;
+        border-radius: 20px;
+        font-size: 14rem;
+        display: grid;
+        place-items: center;
+        transition: all linear .2s
+    }
+
+    #btn{
+        margin: 0 0 0 47vw;
+        padding: 7px;
+        background-color: rgb(145, 199, 246);
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+</style>
+
+<body>
+
+    <h1>Rock Paper Scissor</h1>
+    <h2 id="choose">Choose</h2>
+    <button id="btn">Play again!!</button>
+
+    <div id="bigCont">
+        <div id="cont">
+            <div class="card" id="rock">🪨</div>
+            <div class="card" id="paper">📃</div>
+            <div class="card" id="scissor">✂️</div>
+        </div>
+    </div>
+
+    <div id="resultCont">
+        <div id="result">
+
+            <div class="rcard">
+                User
+                <div id="user"></div>
+            </div>
+            <div class="rcard">
+                Computer
+                <div id="comp"></div>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+
+<script>
+    let array=['🪨','📃','✂️']
+
+    document.getElementById('resultCont').style.display='none'
+    document.getElementById('btn').style.display='none'
+
+
+    document.querySelectorAll('.card').forEach((e)=>{
+        e.addEventListener("click",function(){
+            random=Math.floor(Math.random()*3)
+
+            compcard=array[random]
+            usercard=document.getElementById(`${e.id}`).innerText
+
+
+            document.getElementById('resultCont').style.display='block'
+            document.getElementById('bigCont').style.display='none'
+            document.getElementById('btn').style.display='block'
+
+            document.getElementById('user').innerText=usercard
+            document.getElementById('comp').innerText=compcard
+
+
+            if((compcard=='🪨'&& usercard=='📃')||(compcard=='📃'&& usercard=='✂️')||(compcard=='✂️'&& usercard=='🪨')){
+                document.getElementById('choose').innerText="You won!!"
+            }
+            else if((usercard=='🪨'&& compcard=='📃')||(usercard=='📃'&& compcard=='✂️')||(usercard=='✂️'&& compcard=='🪨')){
+                document.getElementById('choose').innerText="Computer won!!"
+            }
+            else{
+                document.getElementById('choose').innerText="Tie"
+                
+            }
+            
+            
+            
+            
+        })
+
+    })
+
+    document.getElementById('btn').addEventListener("click",function(){
+        document.getElementById('resultCont').style.display='none'
+        document.getElementById('bigCont').style.display='block'
+        document.getElementById('btn').style.display='none'
+        document.getElementById('choose').innerText="Choose"
+
+    })
+
+
+</script>
+
+</html>

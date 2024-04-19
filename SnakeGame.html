@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    #body {
+        background-color: rgb(88, 90, 91);
+        display: flex;
+        justify-content: center;
+
+    }
+
+    main {
+        /* background-color: aqua; */
+        position: relative;
+        top: 27vh;
+
+    }
+
+    #dicecont {
+        display: flex;
+    }
+
+    #btn {
+        cursor: pointer;
+    }
+
+    #throwscont {
+        margin-top: 60px;
+        border: 2px solid black;
+        width: 350px;
+        display: flex;
+    }
+
+    #scorecont {
+        margin-top: 60px;
+        border: 2px solid black;
+        width: 230px;
+        display: flex;
+    }
+
+    #score {
+        margin-left: 10px;
+    }
+
+    #dice {
+        font-size: 6vh;
+        /* animation: anime linear infinite 1s; */
+    }
+
+    
+
+   
+
+
+</style>
+
+<body id="body">
+    <main>
+        <div id="dicecont">
+            <button id="btn">Roll The Dice</button>
+            <div id="dice"></div>
+        </div>
+
+        <div id="throwscont">
+            <h1>Number of Throws :</h1>
+           <h1> <p id="throws"></p></h1>
+        </div>
+
+        <div id="scorecont">
+            <h1>Your Score :</h1>
+            <h1>
+                <p id="score">0</p>
+            </h1>
+        </div>
+    </main>
+</body>
+<script>
+    let throws = 0
+    let score = 0
+    dice = document.getElementById('dice')
+    scr = document.getElementById('score')
+    thr = document.getElementById('throws')
+    dice.innerText = 'Roll The Dice!!'
+
+    document.getElementById('btn').addEventListener('click', function () {
+        roll()
+    })
+
+
+
+    roll = () => {
+        throws = throws + 1
+        thr.innerText = throws
+
+
+        r = Math.floor(Math.random() * 6 + 1)
+        dice.innerText = r
+        score = score + r
+        scr.innerText = score
+        console.log('r', r)
+        console.log('score', score)
+
+
+        if (score == 10) {
+            score = score +10
+            scr.innerText = score
+            alert('add 10')
+        }
+
+        else if (score == 27) {
+            score = score -10
+            scr.innerText = score
+            alert('minus 10')
+            
+        }
+        else if (score == 44) {
+            score = score +10
+            scr.innerText = score
+            alert('add 10')
+            
+        }
+        else if (score == 66) {
+            score = score -10
+            scr.innerText = score
+            alert('minus 10')
+            
+        }
+        else if (score == 80) {
+            score = score +10
+            scr.innerText = score
+            alert('add 10')
+            
+        }
+        else if (score == 98) {
+            score = score -10
+            scr.innerText = score
+            alert('minus 10')
+            
+        }
+
+        if (score > 100) {
+            score = score - r
+            scr.innerText = score
+            alert('Score should not be more than 100')
+            console.log('finalr', r)
+            console.log('finalscore', score)
+
+        }
+        if (score == 100) {
+            alert('YAY You Won!!')
+            // setTimeout(() => {
+
+            location.reload()
+            // }, 5000)
+        }
+
+
+    }
+
+    console.log(
+        '%cHello World',
+        `
+        background-color:red;
+        padding:20px;
+        margin:100px;
+        animation: anime linear infinite 1s;`
+
+
+    )
+
+</script>
+
+</html>

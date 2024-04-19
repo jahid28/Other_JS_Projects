@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    div{
+        /* border: 2px solid red; */
+        width: fit-content;
+        overflow: hidden;
+        cursor: pointer;
+        padding: 5px;
+        position: relative;
+    }
+    .first{
+        font-size: 3rem;
+        position: relative;
+        top: 0px;
+        transition: all linear .2s;
+    }
+    .second{
+        font-size: 3rem;
+        position: absolute;
+        transition: all linear .2s;
+        top: 60px;
+    }
+    div:hover .first{
+        top: -60px;
+    }
+    div:hover .second{
+        top: 0px;
+    }
+</style>
+<body>
+
+    <div>
+        <h2 class="first">Heading</h2>
+        <h2 class="second">Heading</h2>
+    </div>
+    
+</body>
+</html>

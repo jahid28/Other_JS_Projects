@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 5rem;
+    }
+    button {
+      text-decoration: none;
+      font-size: 2rem;
+      border: none;
+      background-color: aquamarine;
+      border-radius: 40px;
+      padding: 20px;
+      cursor: pointer;
+    }
+
+    .trCont {
+      position: absolute;
+      top: 0;
+      display: grid;
+      z-index: 100;
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    .tr {
+      width: 12.5vw;
+      height: 33.33vh;
+      background-color: rgb(85, 167, 139);
+      opacity: 1;
+    }
+
+    .tr1 {
+      transition: all linear 0.5s;
+      transition-delay: 0.2s;
+    }
+    .tr2 {
+      transition: all linear 0.9s;
+      transition-delay: 0.1s;
+    }
+    .tr3 {
+      transition: all linear 0.3s;
+      transition-delay: 0.5s;
+    }
+  </style>
+  <body>
+    <div class="trCont" id="trCont">
+      <div class="tr1 tr"></div>
+      <div class="tr1 tr"></div>
+      <div class="tr2 tr"></div>
+      <div class="tr3 tr"></div>
+      <div class="tr1 tr"></div>
+      <div class="tr3 tr"></div>
+      <div class="tr1 tr"></div>
+      <div class="tr3 tr"></div>
+
+      <div class="tr2 tr"></div>
+      <div class="tr2 tr"></div>
+      <div class="tr1 tr"></div>
+      <div class="tr2 tr"></div>
+      <div class="tr2 tr"></div>
+      <div class="tr1 tr"></div>
+      <div class="tr3 tr"></div>
+      <div class="tr2 tr"></div>
+
+      <div class="tr3 tr"></div>
+      <div class="tr1 tr"></div>
+      <div class="tr2 tr"></div>
+      <div class="tr1 tr"></div>
+      <div class="tr2 tr"></div>
+      <div class="tr2 tr"></div>
+      <div class="tr3 tr"></div>
+      <div class="tr1 tr"></div>
+    </div>
+
+    <h1>About</h1>
+
+    <button id="btn">Go to Home</button>
+  </body>
+
+  <script>
+    const allTr = document.querySelectorAll(".tr");
+
+
+    setTimeout(()=>{
+allTr.forEach((e)=>{
+    e.style.opacity="0"
+})
+},1)
+    setTimeout(() => {
+      document.getElementById("trCont").style.zIndex = "-1";
+    }, 1000);
+
+    document.getElementById("btn").addEventListener("click", function () {
+      document.getElementById("trCont").style.zIndex = "100";
+
+      allTr.forEach((e) => {
+        e.style.opacity = "1";
+      });
+
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 1000);
+    });
+  </script>
+</html>

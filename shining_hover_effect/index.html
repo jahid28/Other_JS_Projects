@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+        /* border: 2px solid red; */
+        margin: 100px 0 0 100px;
+        width: fit-content;
+        cursor: pointer;
+    }
+    h1::after{
+        content: "";
+        display: block;
+        margin-left:-30px ;
+        margin-top: -40px;
+        width: 0px;
+        height: 40px;
+        transform: rotate(-20deg);
+        box-shadow: 0px 0px 20px 20px rgba(255, 255, 255, 0.8);
+    }
+    h1:hover::after{
+        animation: anime .4s 1 linear;
+    }
+    
+    @keyframes anime {
+        0%{
+            margin-left:-30px ;
+
+        }
+        100%{
+            margin-left:90px ;
+
+        }
+    
+        
+    }
+</style>
+<body>
+    <h1>hello</h1>
+
+</body>
+
+</html>
